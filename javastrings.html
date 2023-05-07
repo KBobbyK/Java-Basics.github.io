@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Java - Strings</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .code {
+            color: #e83e8c;
+            font-family: DejaVu Sans Mono;
+            font-size: 18px;
+        }
+
+        .main3 {
+            padding: 40px;
+            margin: 10px 25px 10px 25px;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        code {
+            font-size: 18px;
+            font-family: DejaVu Sans Mono;
+        }
+
+        table {
+            text-align: left;
+            width: auto;
+            border-color: #dee2e6;
+            background-color: transparent;
+        }
+        h1{
+            text-align: center;
+        }
+        img{
+            width: 74pt;
+            height: 45pt;
+            border-radius: 120px 40px 120px 40px;
+        }
+
+        /* .topnav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: solid;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- <div class="topnav">
+        <a href="javaintro.html">Home</a>
+        <a href="java2nd.html">Syntax</a>
+        <a href="javastrings.html">Strings</a>
+    </div> -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <a class="navbar-brand" href="javaintro.html"
+        ><img
+          src="https://www.coveros.com/wp-content/uploads/2014/03/java-logo.jpg"
+          alt="Java-logo"
+      /></a>
+      <button
+        class="navbar-toggler"
+        data-toggle="collapse"
+        data-target="#navbarMenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="javaintro.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="java2nd.html">Syntax</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javastrings.html">Strings</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="main3">
+        <h1>Java - Strings</h1>
+        <p>Strings, which are widely used in Java programming, are a sequence of characters. In Java programming
+            language, strings are treated as objects.<br>
+            The Java platform provides the String class to create and manipulate strings.</p>
+        <h2>Creating Strings</h2>
+        <p>The most direct way to create a string is to write -</p>
+        <code>String greeting = "Hello world!";</code>
+        <p></p>
+        <p>Whenever it encounters a string literal in your code, the compiler creates a String object with its value in
+            this case, "Hello world!'.
+            <br>As with any other object, you can create String objects by using the new keyword and a constructor. The
+            String class has 11 constructors that allow you to provide the initial value of the string using different
+            sources, such as an array of characters.
+        </p>
+        <h4>Example</h4>
+        <pre>
+            <code class="code">
+                public class StringDemo {
+
+                    public static void main(String args[]) {
+                       char[] helloArray = { 'h', 'e', 'l', 'l', 'o', '.' };
+                       String helloString = new String(helloArray);  
+                       System.out.println( helloString );
+                    }
+                 }
+            </code>
+        </pre>
+        <h4>Output</h4>
+        <code>hello.</code>
+        <p></p>
+        <p><strong>Note −</strong>The String class is immutable, so that once it is created a String object cannot be
+            changed. If there is a necessity to make a lot of modifications to Strings of characters, then you should
+            use String Buffer & String Builder Classes.</p>
+        <h2>String Length</h2>
+        <p>Methods used to obtain information about an object are known as accessor methods. One accessor method that
+            you can use with strings is the length() method, which returns the number of characters contained in the
+            string object.
+            <br>The following program is an example of <strong>length(),</strong> method String class.
+        </p>
+        <h4>Example</h4>
+        <pre>
+                <code class="code">
+                    public class StringDemo {
+
+                        public static void main(String args[]) {
+                           String palindrome = "Dot saw I was Tod";
+                           int len = palindrome.length();
+                           System.out.println( "String Length is : " + len );
+                        }
+                     }
+                </code>
+            </pre>
+        <h4>Output</h4>
+        <code>String Length is : 17</code>
+        <p></p>
+        <h2>Concatenating Strings</h2>
+        <p>The String class includes a method for concatenating two strings −</p>
+        <code>string1.concat(string2);</code>
+        <p></p>
+        <p>This returns a new string that is string1 with string2 added to it at the end. You can also use the concat()
+            method with string literals, as in −</p>
+        <code>"My name is ".concat("Zara");</code>
+        <p></p>
+        <p>Strings are more commonly concatenated with the + operator, as in −</p>
+        <code>"Hello," + " world" + "!"</code>
+        <p></p>
+        <p>which results in −</p>
+        <code>"Hello, world!"</code>
+        <p></p>
+        <h4>Example</h4>
+        <pre>
+                <code class="code">
+                    public class StringDemo {
+
+                        public static void main(String args[]) {
+                           String string1 = "saw I was ";
+                           System.out.println("Dot " + string1 + "Tod");
+                        }
+                     }
+                </code>
+            </pre>
+        <h4>Output</h4>
+        <code>Dot saw I was Tod</code>
+        <p></p>
+        <h2>String Methods</h2>
+        <p>Here is the list of methods supported by String class −</p>
+        <table border="1px" cellspacing="5px" cellpadding="10px">
+            <tr>
+                <th>Sr.No</th>
+                <th>Method & Description</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><code>char charAt(int index)</code><br>Returns the character at the specified index.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><code>int compareTo(Object o)</code><br>Compares this String to another Object.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><code>    int compareTo(String anotherString)</code><br>Compares two strings lexicographically.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><code>    int compareToIgnoreCase(String str)</code><br>Compares two strings lexicographically,
+                    ignoring case differences.</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><code>String concat(String str)</code><br>Concatenates the specified string to the end of this
+                    string.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><code>	boolean contentEquals(StringBuffer sb)</code><br>Returns true if and only if this String
+                    represents the same sequence of characters as the specified StringBuffer.</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><code>	static String copyValueOf(char[] data)</code><br>Returns a String that represents the
+                    character sequence in the array specified.</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><code>	static String copyValueOf(char[] data, int offset, int count)</code><br>Returns a String that
+                    represents the character sequence in the array specified.</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><code>boolean endsWith(String suffix)</code><br>Tests if this string ends with the specified suffix.
+                </td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><code>	boolean equals(Object anObject)</code><br>Compares this string to the specified object.</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td><code>	boolean equalsIgnoreCase(String anotherString)</code><br>Compares this String to another
+                    String, ignoring case considerations.</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td><code>	byte[] getBytes()</code><br>Encodes this String into a sequence of bytes using the platform's
+                    default charset, storing the result into a new byte array.</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td><code>	int indexOf(int ch)</code><br>Returns the index within this string of the first occurrence of
+                    the specified character.</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td><code>	int indexOf(int ch, int fromIndex)</code><br>Returns the index within this string of the
+                    first occurrence of the specified character, starting the search at the specified index.</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td><code>int indexOf(String str)</code><br>Returns the index within this string of the first occurrence
+                    of the specified substring.</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td><code>	int indexOf(String str, int fromIndex)</code><br>Returns the index within this string of the
+                    first occurrence of the specified substring, starting at the specified index.</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td><code>	int lastIndexOf(int ch)</code><br>Returns the index within this string of the last occurrence
+                    of the specified character.</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td><code>	int lastIndexOf(int ch, int fromIndex)</code><br>Returns the index within this string of the
+                    last occurrence of the specified character, searching backward starting at the specified index.</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td><code>	int lastIndexOf(String str)</code><br>Returns the index within this string of the rightmost
+                    occurrence of the specified substring.</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td><code>    int length()</code><br>Returns the length of this string.</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td><code>    boolean matches(String regex)</code><br>Tells whether or not this string matches the given
+                    regular expression.</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td><code>String replace(char oldChar, char newChar)</code><br>Returns a new string resulting from
+                    replacing all occurrences of oldChar in this string with newChar.</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td><code>    String replaceAll(String regex, String replacement)</code><br>Replaces each substring of
+                    this string that matches the given regular expression with the given replacement.</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td><code>String[] split(String regex)</code><br>Splits this string around matches of the given regular
+                    expression.</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td><code>boolean startsWith(String prefix)</code><br>Tests if this string starts with the specified
+                    prefix.</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td><code>String substring(int beginIndex)</code><br>Returns a new string that is a substring of this
+                    string.</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td><code>    String substring(int beginIndex, int endIndex)</code><br>Returns a new string that is a
+                    substring of this string.</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td><code>    String toLowerCase()</code><br>Converts all of the characters in this String to lower case
+                    using the rules of the default locale.</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td><code>    String toUpperCase()</code><br>Converts all of the characters in this String to upper case
+                    using the rules of the default locale.</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td><code>String trim()</code><br>Returns a copy of the string, with leading and trailing whitespace
+                    omitted.</td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+
+</html>
